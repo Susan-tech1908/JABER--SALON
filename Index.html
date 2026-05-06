@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Jaber Salon - Expert braids, cornrows, threading, twists & all hairstyles in Nairobi. Book your appointment via WhatsApp today!">
+  <meta name="keywords" content="Jaber Salon, braids, cornrows, threading, twists, hairstyles, Nairobi salon, African braiding, box braids, knotless">
+  <meta name="author" content="Jaber Salon">
+  <meta property="og:title" content="Jaber Salon | Braids, Cornrows, Threading & Twists">
+  <meta property="og:description" content="Stunning hairstyles that catch eyes. Book via WhatsApp now!">
+  <meta property="og:type" content="website">
+  <title>Jaber Salon | Braids, Cornrows, Threading & Twists</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fef9f0;
+      color: #2d2a24;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1e6da;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c49a6c;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+
+    /* navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.8rem;
+      background: rgba(255, 248, 240, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #ffdec2;
+    }
+    .logo h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #b45f2b, #e08e3a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #b45f2b;
+      display: block;
+      line-height: 1.2;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #3c2a22;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #e07c2c;
+    }
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b45f2b;
+      transition: 0.2s;
+    }
+    .mobile-menu-btn:hover {
+      color: #e07c2c;
+    }
+    .btn-wa-nav {
+      background: #25D366;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+    .btn-wa-nav:hover {
+      background: #1da15a;
+      color: white;
+      transform: scale(1.02);
+    }
+
+    /* hero banner */
+    .hero {
+      background: linear-gradient(125deg, #fff1e0 0%, #ffe2ca 100%);
+      margin: 1rem 1rem 2rem 1rem;
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+    }
+    .banner-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 3rem;
+      gap: 2rem;
+    }
+    .banner-text {
+      flex: 1.2;
+    }
+    .banner-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #371f10;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .highlight {
+      background: linear-gradient(120deg, #e98a3e, #f0b27a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #7b4a2a;
+      margin: 0.8rem 0 1.2rem;
+      border-left: 4px solid #e08e3a;
+      padding-left: 1rem;
+    }
+    .services-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+    }
+    .badge {
+      background: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #b45f2b;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: 0.2s;
+      cursor: default;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      box-shadow: 0 8px 14px rgba(37, 211, 102, 0.3);
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-wa i {
+      font-size: 1.5rem;
+    }
+    .btn-wa:hover {
+      background: #20b859;
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+    }
+    .banner-image {
+      flex: 0.8;
+      text-align: center;
+    }
+    .icon-braids {
+      font-size: 7rem;
+      color: #c47a44;
+      background: rgba(255, 245, 235, 0.8);
+      border-radius: 80px;
+      padding: 1rem;
+      display: inline-block;
+    }
+
+    /* sections */
+    section {
+      margin: 5rem 0;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #e08e3a;
+      border-radius: 4px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem 1.2rem;
+      text-align: center;
+      transition: 0.25s ease;
+      box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #ffefdf;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.15);
+      border-color: #f6cd9f;
+    }
+    .service-icon {
+      font-size: 2.8rem;
+      color: #e2842c;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .service-card p {
+      color: #5e4b3a;
+      margin-bottom: 1rem;
+    }
+
+    /* about + contact */
+    .about-contact-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: #ffffffd9;
+      border-radius: 48px;
+      padding: 2rem 2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ffe2cc;
+    }
+    .about-box, .contact-box {
+      flex: 1;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      font-size: 1.05rem;
+    }
+    .contact-item i {
+      width: 40px;
+      height: 40px;
+      background: #fae2cf;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #c26f2e;
+      font-size: 1.3rem;
+    }
+    .social-links {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .social-links a {
+      background: #f0e0d2;
+      width: 44px;
+      height: 44px;
+      border-radius: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #b45f2b;
+      font-size: 1.5rem;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: #e08e3a;
+      color: white;
+      transform: scale(1.05);
+    }
+    .map-placeholder {
+      background: #ebd8c8;
+      border-radius: 24px;
+      padding: 1.2rem;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    /* booking section */
+    .booking-card {
+      background: linear-gradient(115deg, #FFE6D5, #FFF3E9);
+      border-radius: 48px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 2rem auto;
+    }
+
+    /* floating whatsapp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+      z-index: 99;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: scale(1.07);
+    }
+
+    footer {
+      background: #2d241c;
+      color: #e9cfb5;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+      border-radius: 40px 40px 0 0;
+    }
+
+    /* responsive */
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #fffcf8;
+        backdrop-filter: blur(20px);
+        padding: 1.5rem;
+        gap: 1.2rem;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid #fbd7b5;
+        z-index: 99;
+      }
+      .banner-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      .banner-text h1 {
+        font-size: 2.2rem;
+      }
+      .services-badge {
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+      .about-contact-wrap {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 550px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .btn-wa {
+        padding: 12px 22px;
+        font-size: 1rem;
+      }
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.7rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <h2>JABER SALON</h2>
+      <span>braids • cornrows • threading • twists</span>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#" id="bookNavBtn" class="btn-wa-nav"><i class="fab fa-whatsapp"></i> Book Now</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero / Banner Section -->
+    <section id="home" class="hero">
+      <div class="banner-content">
+        <div class="banner-text">
+          <h1>Transform your <span class="highlight">look</span> with <br /> expert braiding & twists</h1>
+          <div class="tagline">JABER SALON – Where creativity meets precision</div>
+          <div class="services-badge">
+            <span class="badge"><i class="fas fa-braces"></i> Braids</span>
+            <span class="badge"><i class="fas fa-border-all"></i> Cornrows</span>
+            <span class="badge"><i class="fas fa-spa"></i> Threading</span>
+            <span class="badge"><i class="fas fa-feather-alt"></i> Twists</span>
+            <span class="badge"><i class="fas fa-cut"></i> All Hairstyles</span>
+          </div>
+          <button class="btn-wa" id="heroWaBtn"><i class="fab fa-whatsapp"></i> Book via WhatsApp</button>
+        </div>
+        <div class="banner-image">
+          <div class="icon-braids">
+            <i class="fas fa-female"></i>
+            <i class="fas fa-magic" style="font-size: 3rem; margin-left: 0.3rem;"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Signature Styles</h2>
+        <div class="services-grid" id="servicesGrid"></div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <button class="btn-wa" id="customPriceBtn" style="background: #e08e3a; box-shadow: none;"><i class="fab fa-whatsapp"></i> Inquire about pricing</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About + Contact Combined -->
+    <div class="container" id="about">
+      <div class="about-contact-wrap">
+        <div class="about-box">
+          <h2 class="section-title" style="margin-bottom: 1rem;">About Jaber Salon</h2>
+          <p style="line-height: 1.6; font-size: 1.05rem;">Jaber Salon is a premier destination for all hairstyling needs in Nairobi. Specializing in braids, cornrows, threading, twists and every creative style, we blend tradition with modern trends. Our experienced stylists ensure each client leaves feeling confident and beautiful. We use high-quality products and prioritize comfort.</p>
+          <p style="margin-top: 1rem; font-weight: 500;">✨ Walk in or book online — Your crown awaits.</p>
+        </div>
+        <div class="contact-box" id="contact">
+          <h2 class="section-title" style="margin-bottom: 1rem;">Get in touch</h2>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i> <span>+254 769491432</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i> <span>+254 725 773 725 (WhatsApp)</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i> <span>Masai lodge stage , Paran Business center</span>
+          </div>
+          <div class="social-links">
+            <a href="https://instagram.com/jabersalon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="#" id="socialWaBtn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/1EMKj1gfG3/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@maryatieno775?_r=1&_t=ZS-96893cQFytg" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <div class="map-placeholder">
+            <i class="fas fa-map-pin"></i> Masai lodge stage, Paran Business center, 2nd gate opposite Think twice — Jaber Salon Studio
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Section extra CTA -->
+    <div class="container" id="booking">
+      <div class="booking-card">
+        <h3 style="font-size: 1.8rem; font-weight: 800;">Ready to transform your style?</h3>
+        <p style="margin: 1rem 0;">Click the button below to instantly chat with us on WhatsApp and secure your slot.</p>
+        <button class="btn-wa" id="bookingSectionBtn" style="background: #25D366; padding: 14px 38px; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i> Book Appointment Now</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>JABER SALON</strong> — Braids • Cornrows • Threading • Twists & All Hairstyles</p>
+      <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> +254 725 773 725 | <i class="fab fa-instagram"></i> @jabersalon</p>
+      <p style="font-size: 0.8rem; margin-top: 1rem;">© 2026 Jaber Salon – Transforming beauty, one strand at a time.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="#" class="whatsapp-float" id="floatingWaBtn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // ===== WHATSAPP CONFIGURATION =====
+    const WA_PHONE = "254725773725";  // Jaber Salon WhatsApp number
+    
+    // Predefined message templates for different buttons
+    const waMessages = {
+      default: "Hello Jaber Salon! I'd like to book an appointment for a hairstyle.",
+      hero: "Hi Jaber Salon! I want to book an appointment for braids/cornrows/twists. Please assist.",
+      custom: "Hello, I'd like to inquire about pricing for a hairstyle. Can you help me?",
+      booking: "Hello Jaber Salon, I would like to book an appointment for a hairstyle. Please let me know your available slots.",
+      floating: "Hey Jaber Salon! I need to book a session. Let me know available slots.",
+      nav: "Hello, I want to book an appointment at Jaber Salon. Please assist.",
+      social: "Hi Jaber Salon! I'm interested in your hairstyling services. Can you help me?"
+    };
+    
+    // Helper function to open WhatsApp chat
+    function openWhatsApp(message) {
+      const encodedMsg = encodeURIComponent(message);
+      const waLink = `https://wa.me/${WA_PHONE}?text=${encodedMsg}`;
+      window.open(waLink, '_blank');
+    }
+    
+    // ===== RENDER SERVICES (WITHOUT PRICE TAGS) =====
+    const servicesData = [
+      { name: "Box Braids", desc: "Neat, long-lasting box braids with soft finish", icon: "fas fa-grip-lines" },
+      { name: "Cornrows", desc: "Classic & creative patterns, straight back or designs", icon: "fas fa-border-all" },
+      { name: "Threading", desc: "Traditional thread styling for vibrant look", icon: "fas fa-thread" },
+      { name: "Senegalese Twists", desc: "Elegant twists, lightweight and chic", icon: "fas fa-feather-alt" },
+      { name: "Knotless Braids", desc: "Pain-free, natural looking knotless braids", icon: "fas fa-gem" },
+      { name: "Crochet & Updos", desc: "Quick install / trendy updos for events", icon: "fas fa-crown" }
+    ];
+    
+    function renderServices() {
+      const grid = document.getElementById('servicesGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      servicesData.forEach(service => {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.innerHTML = `
+          <div class="service-icon"><i class="${service.icon}"></i></div>
+          <h3>${service.name}</h3>
+          <p>${service.desc}</p>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    
+    // ===== SETUP ALL WHATSAPP BUTTONS =====
+    function setupWhatsAppButtons() {
+      // Hero button
+      const heroBtn = document.getElementById('heroWaBtn');
+      if (heroBtn) {
+        heroBtn.addEventListener('click', () => openWhatsApp(waMessages.hero));
+      }
+      
+      // Custom pricing button
+      const customBtn = document.getElementById('customPriceBtn');
+      if (customBtn) {
+        customBtn.addEventListener('click', () => openWhatsApp(waMessages.custom));
+      }
+      
+      // Booking section button
+      const bookingBtn = document.getElementById('bookingSectionBtn');
+      if (bookingBtn) {
+        bookingBtn.addEventListener('click', () => openWhatsApp(waMessages.booking));
+      }
+      
+      // Floating WhatsApp button
+      const floatBtn = document.getElementById('floatingWaBtn');
+      if (floatBtn) {
+        floatBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWhatsApp(waMessages.floating);
+        });
+      }
+      
+      // Navigation book now button
+      const navBook = document.getElementById('bookNavBtn');
+      if (navBook) {
+        navBook.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWhatsApp(waMessages.nav);
+        });
+      }
+      
+      // Social media WhatsApp icon in contact section
+      const socialWa = document.getElementById('socialWaBtn');
+      if (socialWa) {
+        socialWa.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWhatsApp(waMessages.social);
+        });
+      }
+    }
+    
+    // ===== MOBILE MENU TOGGLE =====
+    function initMobileMenu() {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          navLinks.classList.toggle('mobile-open');
+          const icon = menuBtn.querySelector('i');
+          if (navLinks.classList.contains('mobile-open')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+        
+        // Close menu when clicking on any link
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            const icon = menuBtn.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!navLinks.contains(event.target) && !menuBtn.contains(event.target) && navLinks.classList.contains('mobile-open')) {
+            navLinks.classList.remove('mobile-open');
+            const icon = menuBtn.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        });
+      }
+    }
+    
+    // ===== SMOOTH SCROLLING =====
+    function smoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === "#" || targetId === "") return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            const yOffset = -80;
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+      
+      // Handle hash on load
+      if (window.location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            const yOffset = -80;
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+    
+    // ===== ACTIVE NAV HIGHLIGHT =====
+    function setActiveNavOnScroll() {
+      const sections = document.querySelectorAll("section, #about, #contact, #booking");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      if (!navLinks.length) return;
+      
+      window.addEventListener("scroll", () => {
+        let current = "";
+        const scrollPos = window.scrollY + 150;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+          }
+        });
+        
+        const aboutDiv = document.getElementById("about");
+        const contactDiv = document.getElementById("contact");
+        if (aboutDiv && scrollPos >= aboutDiv.offsetTop - 100 && scrollPos < aboutDiv.offsetTop + aboutDiv.offsetHeight) current = "about";
+        if (contactDiv && scrollPos >= contactDiv.offsetTop - 100 && scrollPos < contactDiv.offsetTop + contactDiv.offsetHeight) current = "contact";
+        if (!current && scrollPos < 200) current = "home";
+        
+        navLinks.forEach(link => {
+          const href = link.getAttribute("href")?.substring(1);
+          if (href === current) {
+            link.style.color = "#e07c2c";
+            link.style.fontWeight = "800";
+          } else if (link.id !== "bookNavBtn") {
+            link.style.color = "#3c2a22";
+            link.style.fontWeight = "600";
+          }
+        });
+      });
+    }
+    
+    // ===== INITIALIZE EVERYTHING =====
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServices();
+      setupWhatsAppButtons();
+      initMobileMenu();
+      smoothScroll();
+      setActiveNavOnScroll();
+      
+      // Badge hover effects
+      const badges = document.querySelectorAll('.badge');
+      badges.forEach(b => {
+        b.addEventListener('mouseenter', () => { b.style.transform = 'translateY(-2px)'; b.style.transition = '0.2s'; });
+        b.addEventListener('mouseleave', () => { b.style.transform = 'translateY(0)'; });
+      });
+    });
+  </script>
+</body>
+</html>
